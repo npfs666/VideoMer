@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.staligtredan</groupId>
+	<artifactId>switcher</artifactId>
+	<name>VideoMer-Switcher</name>
+	<url>https://sourceforge.net/projects/videomer/</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<sourceDirectory>./src/main/java/</sourceDirectory>
+		<finalName>switcher-temp</finalName>
+		<resources>
+			<resource>
+				<directory>./src/main/resources/</directory>
+				<excludes>
+						<exclude>*</exclude>
+						<exclude>com/staligtredan/VideoMer/*</exclude>
+						<exclude>com/staligtredan/VideoMer/lang/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/16x16/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/24x24/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/32x32/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/i32x32/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/*</exclude>
+					</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<includes>
+						<include>com/staligtredan/VideoMer/update/Switcher.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>jar-with-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>
+									jar-with-dependencies
+								</descriptorRef>
+							</descriptorRefs>
+							<finalName>switcher</finalName>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>
+										com.staligtredan.VideoMer.update.Switcher
+									</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<version>1</version>
+</project>

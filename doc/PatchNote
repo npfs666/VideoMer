@@ -1,0 +1,80 @@
+2.0.4 : 4/10/2020
+	- Changement de FlexiComboBox de JComboBox<?> vers JComboBox<Object>, pour la compatibilité JAVA11
+	- Simplifié une methode localistcellrenderer pour enlever un deprecated
+	- Passage du projet en compatibilité Java 17 
+	- MAJ du pom avec des nouvelles versions des librairies (tmdb, xstream, slf4j-nop, commons-io, 
+		sqlite-jdbc, jna-platform, log4j-core)
+	- IL MANQUE LA MAJ VERSION AVANT DE SORTIR LE TRUC
+
+2.0.3 : 24/02/2018
+	- MAJ du pom avec des nouvelles versions des librairies
+	- Amélioration de l'écran d'analyse (état d'avancement des copies, fichiers vérouillés, traductions anglais)
+		Correction du bouton Annuler, il permet de repartir de la même étape (le temps de corriger une erreur par exemple)
+	- Correction des traductions
+
+2.0.2 : 08/08/2017
+	- Fenêtre de copie n'est plus modal, on peut continuer à zieuter des films pdt la copie
+	- Corrigé le timeleft et la vitesse de l'écran de copie, ainsi que la suppression des fichiers non finis de copier
+	- Complété la fonction search pour prendre en compte les catégories partout
+
+2.0.1 : 01/01/2017
+	- Threadisation de la détection de MAJ (JFramePrincipal)
+
+2.0.0 : 22/12/2016
+	- Rajout du patchnote de MAJ (JDialogChangelogs)
+ 	- Implémentation des logs
+ 	- Rajout de la possibilité de mettre à jour l'updater.jar (pour y mettre à jour les liens sources notamment)
+ 	- Complètement viré db4o et toute ses implémentations
+ 	- Corrigé l'erreur due à un fichier .properties vide (avec des valeurs par défaut mais ça fonctionne)
+ 	- Amélioration du code au niveau de la gestion d'erreurs, normalement àa devrais bcp moins
+ 		planter chez les cliens (pb de fichier properties, versions, etc...)
+ 	- Auto detect des MAJ au lancement
+ 	- Amélioration des faux-liens et de la recherche en général
+ 	- Amélioration de l'interface en général
+ 	- Amélioré la localization en général
+ 	- Passage à log4j 2
+ 	
+
+ 1.0.3 : 10/12/2016
+ 	- Création d'un nouveau parseur via TMDB (et débugé)
+ 	- Possibilité de changer la taille des miniatures
+ 	- Changé tout le système de stockage et d'affichage & DL des miniatures
+ 	- MAJ de la table de préférences pour simplfier les ajouts par la suite
+ 	- Allégé la structure SQL pour enreg les paramètres (table PREFN)
+ 	- Terminé la localization de JFrameUpdate
+ 	- Changement de la prise en comptes des fichiers langues
+ 		Il ne sont plus pris en compte dans le dossier (et géra via l'app de MAJ)
+ 		Ils sont intégrés directement dans les .jar (update.jar & videomer.jar)
+ 	- Fais une fonction pour ajouter plusieurs EntiteVideo (par parquets de 10), pour aller plus vite en sql
+ 		mais possibilité de faire mieux (un seul insert into pour 10 occurences par exemples)
+ 	- Migration du projet sous maven et UTF-8
+ 	- Correction de bugs au passage
+ 	- Correction de bcp de warnings (ancien code, JComboBox<E>, deprecated,...)
+ 	- Amélioration rapide du moteur de faux liens pour les films (il reste une solution à trouver pour les séries)
+
+ 0.1.9 : 10/02/2015
+    - Ajout du renaming/déplacement des sous titres lors de l'ajout d'élements vidéos
+
+ 0.1.8 : 9/02/2015
+     - Correction bug écran copie
+     - Ajout de l'exportation automatique des sous titres via l'écran de copie (export playlist)     
+
+ 0.1.7 : 2/12/2014
+    - Ajout de la possibilité d'exporter le contenu d'une playlist
+    - Ajout du double clic pour ajouter tout contenu d'un filtre
+    - MAJ de la librairie JNA -> 4.10, XStream -> 1.4.7
+    - Ajout de la librairie apache.IO
+    - Correction d'un bug de chopage de traduction lorsqu'il n'y a pas de new MAJ dispo (JFramePrincipal)
+    - Correction du bug affichette s�rie dans le parseur de data allociné
+
+ 0.1.6 : 18/04/2014
+    - Globalisation de toutes le chaines inclues dans le code (reste à compléter les lang.prop)
+    - Amélioration des regex et extensions fichiers
+    - Ajout de l'onglet Analyse dans les préférences ainsi que ext dans général
+
+ 0.1.3 : 2/07/2013
+    - Amélioration de l'intéraction de la barre de recherche (multilingue, meilleur ergonomie & listeners)
+    - Ajout du menu à propos
+    - Ajout du bouton "Ajouter" dans le clic droit du thumnbnail panel
+    
+    -> fichiers : lang (tout), JFramePrincipal, ThumbnailPanel, 

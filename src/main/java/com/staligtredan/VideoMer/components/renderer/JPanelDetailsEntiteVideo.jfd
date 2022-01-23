@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="com.jformdesigner.model.FormModel">
+  <void method="setProperty">
+   <string>i18n.autoExternalize</string>
+   <boolean>true</boolean>
+  </void>
+  <void method="setProperty">
+   <string>i18n.bundlePackage</string>
+   <string>com.staligtredan.VideoMer.lang</string>
+  </void>
+  <void method="setProperty">
+   <string>i18n.bundleName</string>
+   <string>lang</string>
+  </void>
+  <void method="setProperty">
+   <string>i18n.keyPrefix</string>
+   <string>JPanelDetailsEntiteVideo</string>
+  </void>
+  <void property="contentType">
+   <string>form/swing</string>
+  </void>
+  <void property="root">
+   <object class="com.jformdesigner.model.FormRoot">
+    <void method="add">
+     <object class="com.jformdesigner.model.FormContainer">
+      <string>javax.swing.JPanel</string>
+      <object class="com.jformdesigner.model.FormLayoutManager">
+       <class>java.awt.GridBagLayout</class>
+       <void method="setProperty">
+        <string>$columnSpecs</string>
+        <string>0:1.0, 0:1.0, 0:1.0, 0:1.0</string>
+       </void>
+       <void method="setProperty">
+        <string>$rowSpecs</string>
+        <string>0, 0, 0</string>
+       </void>
+       <void method="setProperty">
+        <string>$hGap</string>
+        <int>5</int>
+       </void>
+       <void method="setProperty">
+        <string>$vGap</string>
+        <int>5</int>
+       </void>
+       <void method="setProperty">
+        <string>$alignLeft</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="setProperty">
+        <string>$alignTop</string>
+        <boolean>true</boolean>
+       </void>
+      </object>
+      <void method="setProperty">
+       <string>border</string>
+       <object class="javax.swing.border.EmptyBorder">
+        <int>5</int>
+        <int>5</int>
+        <int>5</int>
+        <int>5</int>
+       </object>
+      </void>
+      <void method="setProperty">
+       <string>background</string>
+       <object class="java.awt.Color" field="white"/>
+      </void>
+      <void property="name">
+       <string>this</string>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JPanel</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>java.awt.FlowLayout</class>
+         <void method="setProperty">
+          <string>alignment</string>
+          <int>0</int>
+         </void>
+         <void method="setProperty">
+          <string>vgap</string>
+          <int>0</int>
+         </void>
+         <void method="setProperty">
+          <string>hgap</string>
+          <int>3</int>
+         </void>
+        </object>
+        <void method="setProperty">
+         <string>background</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>border</string>
+         <object class="javax.swing.border.TitledBorder">
+          <string>i18nKey=JPanelDetailsEntiteVideo.panelActors.border</string>
+         </object>
+        </void>
+        <void property="name">
+         <string>panelActors</string>
+        </void>
+       </object>
+       <object class="com.jformdesigner.model.FormLayoutConstraints">
+        <class>com.jformdesigner.runtime.GridBagConstraintsEx</class>
+        <void method="setProperty">
+         <string>gridwidth</string>
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JPanel</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>java.awt.FlowLayout</class>
+         <void method="setProperty">
+          <string>alignment</string>
+          <int>0</int>
+         </void>
+         <void method="setProperty">
+          <string>hgap</string>
+          <int>3</int>
+         </void>
+         <void method="setProperty">
+          <string>vgap</string>
+          <int>0</int>
+         </void>
+        </object>
+        <void method="setProperty">
+         <string>background</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>border</string>
+         <object class="javax.swing.border.TitledBorder">
+          <string>i18nKey=JPanelDetailsEntiteVideo.panelDirectors.border</string>
+         </object>
+        </void>
+        <void property="name">
+         <string>panelDirectors</string>
+        </void>
+       </object>
+       <object class="com.jformdesigner.model.FormLayoutConstraints">
+        <class>com.jformdesigner.runtime.GridBagConstraintsEx</class>
+        <void method="setProperty">
+         <string>gridx</string>
+         <int>2</int>
+        </void>
+        <void method="setProperty">
+         <string>gridwidth</string>
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JPanel</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>java.awt.FlowLayout</class>
+         <void method="setProperty">
+          <string>alignment</string>
+          <int>0</int>
+         </void>
+         <void method="setProperty">
+          <string>hgap</string>
+          <int>3</int>
+         </void>
+         <void method="setProperty">
+          <string>vgap</string>
+          <int>0</int>
+         </void>
+        </object>
+        <void method="setProperty">
+         <string>background</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>border</string>
+         <object class="javax.swing.border.TitledBorder">
+          <string>i18nKey=JPanelDetailsEntiteVideo.panelGenre.border</string>
+         </object>
+        </void>
+        <void property="name">
+         <string>panelGenre</string>
+        </void>
+       </object>
+       <object class="com.jformdesigner.model.FormLayoutConstraints">
+        <class>com.jformdesigner.runtime.GridBagConstraintsEx</class>
+        <void method="setProperty">
+         <string>gridy</string>
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JPanel</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>java.awt.FlowLayout</class>
+         <void method="setProperty">
+          <string>alignment</string>
+          <int>0</int>
+         </void>
+         <void method="setProperty">
+          <string>hgap</string>
+          <int>3</int>
+         </void>
+         <void method="setProperty">
+          <string>vgap</string>
+          <int>0</int>
+         </void>
+        </object>
+        <void method="setProperty">
+         <string>background</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>border</string>
+         <object class="javax.swing.border.TitledBorder">
+          <string>i18nKey=JPanelDetailsEntiteVideo.panelCountry.border</string>
+         </object>
+        </void>
+        <void property="name">
+         <string>panelCountry</string>
+        </void>
+       </object>
+       <object class="com.jformdesigner.model.FormLayoutConstraints">
+        <class>com.jformdesigner.runtime.GridBagConstraintsEx</class>
+        <void method="setProperty">
+         <string>gridx</string>
+         <int>1</int>
+        </void>
+        <void method="setProperty">
+         <string>gridy</string>
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JPanel</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>java.awt.BorderLayout</class>
+        </object>
+        <void method="setProperty">
+         <string>border</string>
+         <object class="javax.swing.border.TitledBorder">
+          <string>i18nKey=JPanelDetailsEntiteVideo.panelDate.border</string>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>background</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void property="name">
+         <string>panelDate</string>
+        </void>
+        <void method="add">
+         <object class="com.jformdesigner.model.FormComponent">
+          <string>javax.swing.JLabel</string>
+          <void method="setProperty">
+           <string>background</string>
+           <object class="java.awt.Color">
+            <int>255</int>
+            <int>255</int>
+            <int>255</int>
+            <int>255</int>
+           </object>
+          </void>
+          <void method="setProperty">
+           <string>opaque</string>
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>lblDateText</string>
+          </void>
+         </object>
+         <object class="com.jformdesigner.model.FormLayoutConstraints">
+          <class>java.lang.String</class>
+          <void method="setProperty">
+           <string>value</string>
+           <string>South</string>
+          </void>
+         </object>
+        </void>
+       </object>
+       <object class="com.jformdesigner.model.FormLayoutConstraints">
+        <class>com.jformdesigner.runtime.GridBagConstraintsEx</class>
+        <void method="setProperty">
+         <string>gridy</string>
+         <int>1</int>
+        </void>
+        <void method="setProperty">
+         <string>gridx</string>
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JPanel</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>java.awt.BorderLayout</class>
+        </object>
+        <void method="setProperty">
+         <string>border</string>
+         <object class="javax.swing.border.TitledBorder">
+          <string>i18nKey=JPanelDetailsEntiteVideo.panelDuration.border</string>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>background</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void property="name">
+         <string>panelDuration</string>
+        </void>
+        <void method="add">
+         <object class="com.jformdesigner.model.FormComponent">
+          <string>javax.swing.JLabel</string>
+          <void method="setProperty">
+           <string>opaque</string>
+           <boolean>true</boolean>
+          </void>
+          <void method="setProperty">
+           <string>background</string>
+           <object class="java.awt.Color">
+            <int>255</int>
+            <int>255</int>
+            <int>255</int>
+            <int>255</int>
+           </object>
+          </void>
+          <void property="name">
+           <string>lblPlaytimeData</string>
+          </void>
+         </object>
+         <object class="com.jformdesigner.model.FormLayoutConstraints">
+          <class>java.lang.String</class>
+          <void method="setProperty">
+           <string>value</string>
+           <string>North</string>
+          </void>
+         </object>
+        </void>
+       </object>
+       <object class="com.jformdesigner.model.FormLayoutConstraints">
+        <class>com.jformdesigner.runtime.GridBagConstraintsEx</class>
+        <void method="setProperty">
+         <string>gridx</string>
+         <int>3</int>
+        </void>
+        <void method="setProperty">
+         <string>gridy</string>
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JPanel</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>java.awt.BorderLayout</class>
+        </object>
+        <void method="setProperty">
+         <string>border</string>
+         <object class="javax.swing.border.TitledBorder">
+          <string>i18nKey=JPanelDetailsEntiteVideo.panelPlot.border</string>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>background</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void property="name">
+         <string>panelPlot</string>
+        </void>
+        <void method="add">
+         <object class="com.jformdesigner.model.FormComponent">
+          <string>javax.swing.JLabel</string>
+          <void method="setProperty">
+           <string>background</string>
+           <object class="java.awt.Color">
+            <int>255</int>
+            <int>255</int>
+            <int>255</int>
+            <int>255</int>
+           </object>
+          </void>
+          <void method="setProperty">
+           <string>opaque</string>
+           <boolean>true</boolean>
+          </void>
+          <void method="setProperty">
+           <string>font</string>
+           <object class="java.awt.Font">
+            <string>Tahoma</string>
+            <int>0</int>
+            <int>13</int>
+           </object>
+          </void>
+          <void property="name">
+           <string>lblSynopsisText</string>
+          </void>
+         </object>
+         <object class="com.jformdesigner.model.FormLayoutConstraints">
+          <class>java.lang.String</class>
+          <void method="setProperty">
+           <string>value</string>
+           <string>Center</string>
+          </void>
+         </object>
+        </void>
+       </object>
+       <object class="com.jformdesigner.model.FormLayoutConstraints">
+        <class>com.jformdesigner.runtime.GridBagConstraintsEx</class>
+        <void method="setProperty">
+         <string>gridy</string>
+         <int>2</int>
+        </void>
+        <void method="setProperty">
+         <string>gridwidth</string>
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+     </object>
+     <object class="com.jformdesigner.model.FormLayoutConstraints">
+      <null/>
+      <void method="setProperty">
+       <string>location</string>
+       <object class="java.awt.Point">
+        <int>5</int>
+        <int>5</int>
+       </object>
+      </void>
+      <void method="setProperty">
+       <string>size</string>
+       <object class="java.awt.Dimension">
+        <int>610</int>
+        <int>110</int>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.jformdesigner.model.FormComponent">
+      <string>javax.swing.JLabel</string>
+      <void method="setProperty">
+       <string>text</string>
+       <object class="com.jformdesigner.model.FormMessage">
+        <null/>
+        <string>JPanelDetailsEntiteVideo.lblClicToSearch.text</string>
+       </object>
+      </void>
+      <void property="name">
+       <string>lblClicToSearch</string>
+      </void>
+     </object>
+     <object class="com.jformdesigner.model.FormLayoutConstraints">
+      <null/>
+      <void method="setProperty">
+       <string>location</string>
+       <object class="java.awt.Point">
+        <int>35</int>
+        <int>130</int>
+       </object>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

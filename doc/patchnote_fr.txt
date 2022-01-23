@@ -1,0 +1,24 @@
+=====================================================================
+		VideoMer 2 - Liste des changements
+		https://sourceforge.net/projects/videomer/
+=====================================================================
+	+ Fonctionnalité ajoutée
+	- Correction de bug
+	* Information
+	! Important - Prenez note !
+=====================================================================
+
+=== Client Release 2.0.0 22 Déc 2016
++ Rajout de l'écran patchnote
++ Amélioration du système de mise à jours
+- Nettoyage du code
+- Multiples corrections de bugs
++ Amélioration des faux-liens et de la recherche en général
++ Amélioration de l'interface
++ Amélioration des traductions
+ 	
+=== Client Release 1.0.4 10 Déc 2016 	
+! Changement du système de recherche des films et séries
+	plus rapide et plus efficace
++ Amélioration de l'affichage des miniatures et possibilité de changer 
+	la taille via le menu Affichage -> Minitatures

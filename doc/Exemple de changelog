@@ -1,0 +1,559 @@
+===============================================================================
+                        TeamSpeak 3 - Client Changelog
+                       Copyright TeamSpeak Systems GmbH
+                           http://www.teamspeak.com
+===============================================================================
+   + Added feature or noticeable improvement
+   - Bug fix or something removed
+   * Changed or Information
+   ! Important - Take note!
+===============================================================================
+
+=== Client Release 3.0.5 15 Feb 2012
+* Caps Lock now available as hotkey on Mac
+* Minor bookmarks manager layout overhaul
+* Adjusted Linux runscript to work better with KDE
+- Fixed misbehaving "More" button in All Clients List
+- Fixed possible crash when connecting to server
+- Fixed chat input field when switching chat tabs and text was selected
+- Disable "Show ServerQuery Clients" when adding a bookmark via a ts3server://
+  link with "addbookmark=<label>".
+- Use nickname of default identity when connecting via ts3server://
+- Hide empty global "Plugins" menu when no plugin creates a global menuitem.
+- Display bookmark name in server tab, bookmark name was previously ignored.
+- Fixed detecting changes in bookmarks manager with new serverquery and
+  soundpack settings.
+- Add bookmark from ts3server link as last item on first level of the tree
+  instead of subitem of the last folder.
+- Calling requestFileList in plugins no longer opens file browser window in
+  client (note plugins should use return codes to implement this properly).
+- Updater: When autostarting the client, keep the start button disabled to
+  avoid starting the client multiple times.
+- Escape "&" in bookmark labels when shown in menu
+- Fixed issues banning visible client when ban power was set by channel group.
+- Fixed anti-flood message printed in wrong tab
+- Fixed chat tab notification markers when switching between multiple servers.
+- Newsticker performance improvements.
+- Fixed possible crash when clicking toolbar buttons while switching servers.
+- When clicking ts3server links with addbookmark=<label>, request adding new
+  bookmark if the specified label does not yet exist.
+
+=== Client Release 3.0.3 20 Jan 2012
+! Updated plugins API to 15
++ Improved ban list, now shown as a table. Added sorting and filtering. Right-
+  click on table header to configure which table columns to show.
++ Plugin API: Added function banclientdbid. Added new parameter lastNickName to
+  onBanListEvent.
++ Plugin API: Added parameter clientUniqueIdentity to onClientChatClosedEvent
+  and onClientChatComposingEvent.
++ Added custom plugin menus (global menu, channel and client contextmenus), so
+  plugins can add menuitems to the TS3 client and receive events when the item
+  is clicked. See the test plugin for details about implementing own menus.
+  The Lua plugin also allows own menus.
++ Allow editing channel groups of a user in "Channel groups of Client" dialog.
++ Added button to remove all channel groups with a single click from a client
+  in "Channel groups of Client" dialog.
++ Windows uninstaller optionally deletes all configuration files. Added new
+  page to uninstaller where user can control this (default: do not delete).
++ Added option to clear cache on exit (Options - Security)
++ Added "Edit bookmark" to bookmarks popup menu
++ Added option to change also the nickname in connected bookmark when renamed
+  oneself.
+* Mac: Added Cmd+W shortcut to minimize main window
+* Avatar images will be resized when uploading, to users can select a larger
+  image and have TeamSpeak scale it down automatically.
+* Permission tabs for channel, client and channelclient permissions are now
+  disabled instead of being removed when the permission to list that type
+  is missing.
+* Improved behaviour of channel permissions dialog when permissions failed to
+  be applied.
+* Show server query clients is no longer a global option but for each server
+  tab, based on a bookmark. A temporary toggle can be added by customizing the
+  toolbar. Please update your bookmark. We do not convert the old setting!
+* Because of now having all TS3 supported bbCodes usable in WYSIWYG editor, the
+  bbCode [SIZE=+3] is just still in for convenient. Please use a fixed value
+  like [SIZE=10] to have more possibilities.
+* Newsticker allows to click on individual HTML links.
+* Added link to Applications folder and background image to Mac disk image.
+* Print memory usage to client log for testing purpose.
+- Channel chat tab can no longer be closed.
+- Hide "Error requesting ping" error log when disconnected (in this case it's
+  not really an error).
+- Hide statusbar text when mouse leaves chat text window to avoid sticky
+  statusbar messages from hyperlinks.
+- Fixed broken HTML in delete client confirmation dialog from List all Clients
+  window when client nickname had special HTML characters like < >
+- Fn key on Macbooks now recognized as hotkey
+- Fixed contextmenu of bookmark menuitems when items were in subfolders
+- Save channel subscriptions per server and client UID (before only per server)
+- Fixed hotkey BringToFront when client was minimized.
+- Fixed preventing baloontips when running a fullscreen application.
+- Fixed composing and close-chat events which got previously broken.
+- Fixed autoreconnecting in password-protected channel.
+- Properly register packet installer file associations on Mac in the case of
+  old Mac clients getting updated (worked when installing from dmg).
+- Fixes and performance improvements for fetching and caching remote icons in
+  channel description.
+- Fixed invalid "Not connected" display in G15 plugin when closing another
+  server tab.
+- Removed option to configure chat history buffer size. Just use 20 lines.
+
+=== Client Release 3.0.2 16 Nov 2011
+! Updated plugins API to 14
++ Added individual handling of soundpacks per servertab.
++ Added that dropping a file from File Browser into an offline message will
+  create a ts3file:// link. A few minor bbCodes are now usable too.
++ Added "close all but this" for chat tabs.
++ Added two notifications CLIENT_RENAMED_BY_YOU and CLIENT_RENAMED_BY_OTHER
+  which were also included in our default soundpacks.
+* Exported new function getClientLibVersionNumber to plugins API
+* Changed paramaters of onServerLogEvent and onServerLogFinishedEvent in
+  plugins API and Lua plugin scripts.
+* Updated server log dialog to support new improved server logging.
+* More detailed client logging for connection attempts.
+* Crashdump dialogs lets you open the folder to the dump file instead of just
+  copying the filename.
+* Banner requests now consider the HTTP header "Cache-Control: no-cache".
+* Updater autostarts client after successful update
+* Improved connection quality information in statusbar.
+* Added news ticker to client and updater.
+* Last ban time remembered and restored when opening ban dialog the next time.
+* Mac: Mainwindow splitter no longer collapsible as workaround for Qt issue.
+- Fixed client issue when connected with multiple tabs and overwriting a file
+  in filebrowser of inactive tab.
+- Fixed some default_speech sound file issues. Some special sound files pointed
+  to old targets.
+- Fixed not respecting the i_group_sort_id for server/channel groups in virtual
+  server edit dialog.
+- Fixed some line breaks for copy & paste from chatlog.
+- Fixed client can write in another opened chatab.
+- Fixed showing false drop indicator frame after moving a channel spacer.
+- Fixed showing "invalid client id" in "out of view" detection.
+- Fixed renaming the channel tab if another channel gets a new name.
+- Fixed false report "offline message sent" when permissions are insufficient.
+- Fixed showing found receipients in autocompleter in "new offlinemessage"
+  dialog. The search is triggered if receipient is not in the contact list.
+- Fixed hiding clients system tray context menu when clicking outside.
+- Fixed copying channel edit dialog description to clipboard. New Lines are no
+  longer stripped off.
+- Fixed whisper lamp shining blue instead red if whisper hotkey was pressed
+  again before release delay was reached.
+- Added missing whisper settings to contact defaults dialog.
+- Bookmark folders no longer collapse when dragging & dropping.
+- Added small delay when searching in the All-clients list window to prevent
+  spamming the server with search requests.
+- Fixed bug in tree drag&drop which made is possible to drag a wrong client
+  into a channel.
+- Fixed: Notifications marked as important were not saved to soundpacks.
+- Fixed assert when editing "special" notifications.
+- Various improvements and fixes to sound backends.
+- Fixed display of b_client_skip_channelgroup_permissions in permission
+  overview when skip flag was set on channel.
+- Channels no longer collapse after moving when a client is moved inside.
+- Fixed bookmark manager identity dropdown box misbehaving when default
+  identity is not the first in the identity list.
+  
+=== Client Release 3.0.1 12 Aug 2011
+* On machines that have a center speaker (like surround 5.1 and surround 7.1)
+  changed the output channels for 1 channel sound to front left+right speakers
+  (was center speaker). This fixes issues for people who have no center speaker
+  connected even though their sound card is configured for surround sound.
+- Fixed "Assertion channels==0".
+- Fixed UTF-8 usage in plugins API, stylesheets, package installer, soundpacks
+  and updater.
+- Fix sound issue on Mac for unknown/mono sound output devices
+- Fix assert in recordeditor when clientplugins modified captured sound data
+- clientquery: Fix issue where no ERROR_ok was returned when running
+  clientupdate
+- clientquery: Documentation tweaks
+- Fixed possible crash with tsdns resolve
+- Fixed bug where ptt stayed active when whispering on a second tab
+
+=== Client Release 3.0.0 05 Aug 2011
+! Increased plugin API version to 13
++ Multiple improvements to Voice Latency (= the time it takes before what you
+  say is heard by others). Among these also a tweak to the Voice Activity
+  Detection which makes VAD slightly less accurate but removes 20ms of latency.
+  The old VAD behavior is still available as "Legacy Voice Activation
+  Detection" in capture settings.
++ Added "connectbookmark=<bookmarkUuid>" commandline parameter.
++ Changed the custom nickname character limit (no whitespaces), minimum 1 and
+  maximum 30 characters.
++ Added getServerVersion, isWhispering and isReceivingWhisper to plugin API.
++ Added getAvatar and onAvatarUpdated to plugin API. See test plugin for usage.
++ Added that Push-To-Talk delay also affects Push-To-Whisper and whisper reply.
++ Showing a notice if a bookmark has "unresolved" properties to remind about
+  who is using the defaults temporarily.
++ The keyboard-search in servertree has been improved. Holding down SHIFT while
+  typing a character to search backwards. Custom nickname has priority.
++ Many new commands added to clientquery interface
+* If a timeout occurs while enumerating direct input devices, a dialog shows
+  which devices have been found so far. It might will help find the problem.
+* SPECIAL_3D_TEST and SPECIAL_SOUND_TEST are always attempted to play from 
+  default soundpack, even when "no sounds" is configured.
+- Fixed bug that could lead to corrupted sound being played back when the
+  latency factor slider was set to values > 1.
+- Fixed when switching to playback profile with a slash in its name a new
+  profile was created.
+- Fixed whisper list hotkeys, individual use of "on key down/release".
+- Fixed that servernames in subscriptions dialog will be updated.
+- Fixed downloads when target dir is not writable (e.g. CD, DVD etc).
+- Fixed HotKey Run Plugin commands with length above 1024 will be truncated.
+  
+=== Client Release 3.0.0-rc2 08 Jun 2011
++ Added banner resize mode to virtualserver settings.
++ Channel context menu "unsubscribe from channel family" is available as soon
+  as any subchannel is subscribed.
++ "Set Avatar" now is disabled without permission.
++ Added package installer for easy plugins/styles/soundpacks etc. one-click
+  installations.
+* Plugin authors note: requestChannelSubscribe and requestChannelUnsubscribe
+  now take an array of channelIDs as parameter instead of a single channelID.
+* Exchanged default soundpack with male and female soundpacks.
+* Added soundpack page to setup wizard to select one of male or female.
+* Select and scroll to own client after connecting.
+* Fixed switching a fullscreen game to desktop when client is minimized and
+  showing the "warn while muted", the "entering moderated channel", the 
+  "force push-to-talk" or the "maximum amount of clients reached" dialog.
+* Client and server log windows now save and restore log level checkbox states.
+* Added "Debug" checkbox to control debug output in client log window.
+* Added "Delete" to channel permission to set i_channel_needed_delete_power.
+* Plugin API: Added returnCode parameter to sendPluginCommand
+- Support for international domain names readded.
+- Removed validation of input text from connection connect and bookmark
+  address field, so that every address can be used.
+- Fixed possible crash in AppScanner plugin with Umlauts.
+- Added a missing separator within an invitation.
+- Moved rest of the sounds into soundpack for more customized handling.
+- Fixed that poke dialog no longer opens when nickname was changed.
+- Changed the Push-To-Talk tooltip lines which were displayed in wrong order.
+- Fixed displaying port when connected via invitation.
+- Fixed errordisplay when family subscriptions on channels fail.
+- Fixed dropping images from filebrowser into channel description when
+  connected on multiple servers.
+- Fixed context menu to copy offlinemessage text.
+- Limited the last mentioned URLs in systemtray context menu to 10.
+- Fixed that image-descriptions near avatar are sometimes written over the edge
+- Image in channel description was broken when overwritten with same name.
+- Fixed that offline messages throws a warning when recipient wasn't found on
+  the server.
+- Don't save empty subscribed channels list when quickly disconnecting again
+  from a server, loosing the subscribed channels.
+- Fixed problem when binding hotkeys while joysticks were active that "pressed"
+  a button constantly. 
+- Fixed that TeamSpeak does not start as a result of broken input device
+  drivers. If detected TeamSpeak will at least start without usable hotkeys.
+- Fixed ts3server:// links being overwritten by autoconnect bookmarks when a
+  bookmark for the linked server already exists.
+- Windows installer no longer allows installing the 64-bit client on 32-bit
+  operating systems.
+
+=== Client Release 3.0.0-rc1 10 May 2011
+! Updated CELT codec. Due to codec bitstream incompatibility you can only
+  communicate with new clients in channels using the CELT codec. Old clients
+  will either sound weird/corrupt, or (on newer servers) will not be heard.
+! Increased plugin API version to 11
+! Style authors should adjust SERVER_PORT in their serverinfo.tpl, see the
+  existing template within the default style.
++ Removed fmod sound system
++ Added a new default sound pack
++ Added new "easy permission" dialogue for easier configuration of permissions
++ Added text format toolbar and WYSIWYG edit mode to channel description
+  tear-off editor.
++ Added TSDNS support, see documentation on the TSDNS server release, which
+  is bundled with future TS server releases. Connecting to servers for the
+  first time via hostname can be slower than before in some circumstances.
++ Added delay of one second to server-side client search in "All clients"
+  dialog before search can be used again to avoid spamming the server.
++ Added horizontal scrollbars to channel group dialogs
++ Added dialog to manage server subscription modes to Options - Applications
++ Removed option "Show smilies", now every chat context menu sets globally.
++ Added hotkey "Stylesheet helper" which helps us and stylesheet authors to
+  show the needed information from under cursor widget. Additionally it will
+  set the given stylesheet e.g. background: blue; for highlight.
++ Added "F1" keyboard shortcut to open permissions help window.
++ To avoid confusion, a notice in the advanced permissions tree informs the
+  the user when b_client_skip_channelgroup_permissions is enabled.
++ Added information dialog when voice activation detection changes to
+  Push-to-talk or vice versa due to b_client_force_push_to_talk.
++ Added button to chat options page to change chat default font.
++ TTS (Text To Speech) on Windows now uses the correct playback device.
++ TTS (Text To Speech) volume on Windows can now be adjusted via playback
+  sound pack volume slider.
++ Channel create/edit dialog now allows to set some channel specific permission
++ Added option to virtual server dialog to disable weblist reporting
++ In filetransfer view, a slot and speed limitation can be set directly. The
+  minimum speed limit is at least 5 KiB.
++ Fixed making a passworded channel to default channel. Note: If a channel was
+  made to a default channel it cannot just be switched back. Make another
+  channel default instead - see also tooltip.
++ Showing information message when trying to delete the default channel.
+* Updated to Qt 4.7.2
+* Playback options: Voice volume slider now requires a click to "Apply", so
+  both sliders now behave identical.
+* Overhauled ban dialogs.
+* Overhauled webserver list layout.
+* Print more detailed message when a channel/client/server icon wasn't found.
+* Testing voice in the capture device option page will now use the default
+  playback profile instead of the currently selected profile.
+* Capture Mode and -Device can be changed during an active voice test.
+* Hoster button now works with php scripts serving images, it is not longer
+  required to directly link to image files.
+  link to image files 
+* The file transfer bandwidth limit takes influence of the available slots.
+  Each slot should have at least 5 KiB/s, 2 slots 10 KiB/s etc.
+* Updated layout of channel settings dialog
+* Capture- and Playback devices will be checked for validity and existence 
+  on device change or when the connection is initiated.
+* "Start/Stop rotation" have been removed from 3D item context menu entries.
+* The invitation dialog will be closed when client gets disconnected.
+* Glance button no longer toggles global option, instead toggle the subscribe
+  subscribe state for individual server tabs. State is saved and restored per
+  server unique id over client restart.
+* Removed option "Mute microphone when locking", now always active.
+* Enabled text chat to ServerQuery clients. Inform user that a ServerQuery
+  needs to register for private text messages to receive private chats.
+* To reduce server load, when applying easy permissions send all permissions
+  in one step. This makes marking UI elements red when the permissions could
+  not be applied unfortunately impossible, so this feature was removed for now.
+* Show only one permissions help window per permissions dialog, not one per tab
+* Implemented more Lua functions, see testmodule/demo.lua. Lua plugin now
+  registers for plugin commands so they can be used from Lua scripts.
+* More/Less button state saved and restored for connect, bookmarks and virtual
+  server edit dialogs.
+* Plugin filename suffixes are removed for pluginCommand usage. Currently
+  removed suffixes are: _win32, _win64, _linux_x86, _linux_amd64, _x86, _amd64,
+  _32, _64, _mac, _i386, _ppc
+* Added settings dialog to Lua plugin to allow enabling or disabling Lua
+  script modules, replacing the old mechanism with the text file in the Lua
+  plugin directory.
+* "/lua run <function>" now supports running functions from modules using
+  "/lua run <module>.<function>". Adjusted testmodule to the new beheaviour.
+* Port fields removed from connect and bookmark dialogs. Instead the syntax
+  <hostname>:<port> is used.
+* Overhauled permissions help widget
+* Display in client info frame if a channel group was inherited from an upper
+  channel.
+* Clients contextmenu offers to set inherited channel groups if applicable on
+  current subchannel.
+* Overhauled appscanner plugin settings
+* Overhauled contextmenus in permissions window
+* Adjusted eliding channel names in sort-after dropdown box in channel edit
+  dialog
+* Overhauled context menus in filetransfer view
+* URL Catcher only writes new captured URLs on client quit
+* Added tooltip help texts when creating channel spacer
+* Allow drag&drop from clients list into client permission lineedit
+* Removed now unused callback onVoiceRecordDataEvent from plugin API
+* Serverconnectioninfo window remembers position
+* Fixed client lag when renaming contacts in huge contact list
+* Setup wizard overhauled
+- Fixed possible assertion on incoming chats.
+- Virtual server weblist checkbox disabled on missing permission on newer
+  servers.
+- Fixed possible crash in G15 plugin when pressing the "Chan" button while
+  disconnected.
+- Fixed VolumeControl plugin to close settings dialog when deactivating plugin
+  via hotkey.
+- Fixed that an unchecked transfer speed limit means unlimited.
+- Fixed server tabs not switching playback/capture devices properly when only
+  the mode was changed.
+- Fixed appscanner plugin handling client data when server was restarted.
+- Calling plugin functions requestFileList and requestPermissionOverview no
+  longer open the FileBrowser or PermissionOverview dialogs within the client.
+  Added returnCode parameter to onFileListEvent and onPermissionOverviewEvent,
+  so plugins can also check if the callbacks were caused by an own request.
+- "Test Voice" stops as soon as the microphone will be activated
+- Fixed subscribe-all freezing the client for several seconds on big servers.
+- Playing notifications test sound now uses the TS3 default playback profile
+  instead of the system default device and uses the wave file volume modifier.
+- Remember selected item in notifications tree when switching sound packs.
+- Fixed default settings for contacts manager being saved to wrong config file.
+- Fixed disconnect not stopping autoreconnect properly during IP lookup.
+- Fixed caught URLs "times mentioned" numeric sorting.
+- The whisper history context menu got a few more entries.
+- Fixed an offline message issue when a contact changed his nickname while
+  typing an offline message.
+- Fixed using "one time privilege key" after improving security level when
+  connecting to server.
+- Fixed that channel chat tab name could be wrong after reconnect.
+- Fixed several widget height issues on netbooks.
+- Limit amount of remembered client log messages to 500.
+- Fixed client log view losing text format when clicking the Clear button.
+- Don't open chat tab on double-click for ServerQuery clients.
+- Fixed showing Device-Changed-Notification when playback or capture mode has
+  been reset to default during sound system convertion.
+- Automatically select top group after deleting a server- or channelgroup
+- Fixed hotkey when editing/renaming "switch to channel", reported by user in
+  forum
+- Channel spacer weren't shown in "switch to channel" list.
+- Fixed bad apply/discard check on Options Download page, which always reported
+  to have changed with an empty config file.
+- To resolve issues with some webservers, no longer append ?suid=<server uid>
+  to banner URLs.
+- Fixed reloading privilege key list after creating invitation.
+- Fixed virtualserver edit dialog having "Banner gfx URL" and "URL" fields in
+  wrong order.
+- Double-click on Grant column in advanced permission tree will add the grant
+  permission instead of the normal permission if permission was assigned yet.
+- Check matching client unique identifier when opening a contextmenu from chat.
+- Fixed playing connected sound after dialog about unfinished filetransfer was
+  closed.
+- Removed showing "???" when download gets larger than listed. For example,
+  when resuming an upload, while another one is downloading.
+- Fixed notifications test sounds not playing when playback device was set
+  to "Automatically use best mode" and "Default" device.
+- Activating capture device of the server tab which previously owned the
+  capture device when applying capture options, instead of activating the
+  most-right server tab.
+- Disable chat tabs when autoreconnecting after server connection was lost.
+- Don't disable chat input field anymore when the chat partner is not
+  connected to ensure offline messages can be sent and the chat text can
+  be still accessed.
+- When a client with an active chat tab disconnects and another visible client
+  with the same client unique ID is available, reassign the chat tab to the
+  other client ID to continue the chat.
+- When continuing to chat with the same client UID after reconnecting to
+  another server, reusing the existing chat tab.
+- Fixed that a filetransfer hangs in waiting status, when file is in use.
+- Return key to enter a channel will now ignore autorepeat, so the action
+  triggers only once when the key is pressed down.
+- Fixed filetransfer context menu "open folder" on queue item.
+- Fixed showing "Transfer Completed" as tray message when cancelled.
+- Fixed an issue when download contains subfolders
+- Don't show the "ID not found" dialog when adding a client to a server- or
+  channelgroup fails on insufficient permissions error.
+- Adjusted search behaviour for permissions to find both the permission name
+  and description, independent of which of them is currently displayed.
+- Group sort ID now used in comboboxes in whisper and privilege key dialogs.
+- Fixed printMessage plugin function with channel target.
+- Couple of filetransfer fixes like: progress sorting, up-/download texts,
+  filetransfer view show once...
+- Fixed that playback- and capture devices only were checked when connected
+- Fixed that context menu on user in channel groups appears twice
+- Default font family for chat was shown wrong.
+- Fixed displaying ":0" when connecting to IP.
+- Fixed possible crash when autoreconnecting on a server which was previously
+  connected to using an IP.
+- Fixed password parameter when inviting a buddy
+- Fixed no more triggering close/reopen capture devices when just changing
+  PreProcessorConfigValues like voice activation state, echo cancelling etc.
+- Fixed playing sound "file transfer complete" when canceling while using
+  bandwidth limiter.
+- No custom contextmenu when clicking on Windows titlebar
+- Fixed language selection box in application options page
+- Fixed showing the creation date of files in file transfer overwrite dialog.
+- Added selection page for overlay and volumecontrol plugins to setup wizard,
+  added check to open bookmarks/serverlist/Get own server webpage to last
+  wizard page.
+- Ignore ts3file:// links in URLCatcher
+- If the currently used capture profile gets deleted, the default capture
+  profile will be set on all connected servers using this profile.
+- Fixed display of newly downloaded icons in icon viewer
+ 
+=== Client Release 3.0.0-beta37 21 Dec 2010
+! Plugin API version increased to 9. Added possibility to use return codes
+  with plugins to associate server errors with ts3 function calls from
+  individual plugins. See the test plugin for implementation details.
+! Soundpack creators take note, the ${clientType} variable now expands to
+  "blocked_user" instead of "foe" for consistency reasons.
+! The maximum amount of simultaneous tranfers is now 10 (5 upload/5 download).
++ Added function requestInfoUpdate to plugin API to allow plugins to request
+  updating the info area of the specified item if this is the currently
+  displayed item in the info area.
++ Added option "Enable Voice Activation Detection while using Push-To-Talk"
++ Added "Quota" tab to client connection info dialog to display monthly
+  filetransfer quota statistics.
++ Added that clients can be added via unique-/database id and dropped from
+  server tree or contacts into permissions -> channel groups -> clients.
++ Added "Whisper lists" button to whisper options as alternative way to open
+  the whisper lists dialog.
++ Channel descriptions can now be formatted using the BB-Code [LIST] tag. Also
+  supported is [LIST=x] where x is one of "1, i, I, a, A".
++ Add search field to servergroups permissions window.
++ Added "Skip" and "SkipAll" for filetransfers
++ Filebrowser shows current available dirs and files
++ Added "Delete client" to contextmenu in "All clients" dialog for deleting
+  offline clients directlry from the clients database list.
++ Added dialog with a "Don't show again" checkbox when entering a moderated
+  channel to inform the user how to request talk power.
++ Added links to add-ons webpage to multiple places in the client.
++ Hotkeys now have an own config named hotkeys.ini. Existing hotkeys will be
+  extracted to the new config file at client startup and only accessed there.
+  This makes it easier to share hotkey configurations.
++ All contacs have been extracted to own config named contacts.ini
++ Added a message popup when server update is available but server hasn't been
+  updated for at least seven days.
++ Added information dialog when warn-when-muted sound is played for the first
+  time telling the user what this sound means and give him a chance to disable
+  the feature.
+* Changed hotkey to focus channel widget from Shift-Backspace to Alt-Return.
+* Permission overview contextmenu item is now dependant on either
+  b_client_permissionoverview_own or b_client_permissionoverview_view for own
+  client and b_client_permissionoverview_view for other clients.
+* Permission overview now shows grant permission in a new column of the
+  corresponding permission instead of an own line.
+* The search field in the "All clients" dialog now searches directly on the
+  server instead of the local results. So no need to hit "More" multiple times
+  until all clients are received before searching anymore.
+* When uploading/downloading an existing file, the dialog shows filesize and
+  file creationdate.
+* Permission filter text and state of the granted-only checkbox are now saved
+  and restored per permission tab.
+* Changed behavior of clicking a ts3server:// link including "addbookmark".
+  Now choose between "Do nothing", "Bookmark only" and "Bookmark and Connect".
+* New more detailed soundpack entries for server/channelgroup assigned actions.
+* Permissions tree now displays group icon and the show-group-name permission
+  as icon and text instead of the raw permission value.
+* When kicked or banned from the server, only one or neither sound file will
+  be played, depending on which notification is activated.
+* Behaviour of glance button changed: Now toggles between "Subscribe to all
+  channels" and "Subscribe to current and previously subscribed channels"
+  option. Current channel subscribe state is saved to disc and restored next
+  client restart. If "Subscribe to all channels" is selected, newly created
+  channels are automatically subscribed.
+* The Hotkey "Bring Client to Front" will no longer minimize a full screen game
+- Fixed chat logging when multiple servertabs are trying to log into the
+  same logfile.
+- When forcing to start a second client with "-nosingleinstance", the second
+  instance will log chats to avoid having multiple clients write to the same
+  file producing invalid HTML.
+- Fixed dropping files to upload on filebrowsers tool buttons. Dropping there
+  is not available from the outside like desktop, explorer etc. Inside the
+  filebrowser, items can still be dropped to root or the according levels up.
+- When adding a user twice to a server group, don't open the buddy-invite
+  dialog occuring when a client is unknown on this server.
+- Reload server/channelgroups when b_serverinstance_modify_templates or
+  b_serverinstance_modify_querygroup have changed.
+- Whisper lists in whisper dialog can now be changed using cursor keys.
+- Fixed source file being deleted from view when drag&drop operation in
+  filebrowser failed.
+- Overhauled layout of offline messages dialogs, added Ctrl+N and Ctrl+R
+  keyboard shortcuts for "New" and "Reply" actions.
+- Fixed filetransfer playing error sound twice if file not found
+- Fixed filetransfer request to overwrite/resume/abort files
+- Fixed date/time format in filebrowser, urlcatcher, clientdebuglog and
+  client log, which wasn't system dependent
+- Remove write-only file property before deleting local avatar to avoid the
+  "Failed to remove existing local avatar copy" error message.
+- Fixed filetransfer progressbar display on windows when using classic theme
+- Fixed playing filetransfer complete sound once per download
+- Removed option "Only play sound when all of my transfers have been completed"
+- Fixed assertion when editing a channel or channelclient permission and
+  channels were created, moved or deleted.
+- Fix the "warn when talking while muted" function: It should now only occure
+  if you have only a mic mute set - and it works with Push-To-Talk now.
+- Fixed sorting in filebrowser, alphabetic order wasn't always respected
+- Fixed pasting files or folders containg "=" in name from filebrowser
+- Fixed crash when transferring files simultaneous
+- Fixed starting updater located in a directory with unicode characters
+- Fixed resetting filebrowsers window state when refreshing directory
+- Fixed filebrowser could throw "database empty result set" when transferring
+  recursive and by that end up in a broken/invalid paths.
+- Fixed format options were taken over to other tabs.
+- Fixed an issue, when clicking invitation but starting TeamSpeak for the
+  first time.
+- Fixed "Server groups dialog" menuitem in client contextmenu being enabled on
+  hotkey even if the client lacks i_group_member_add_power.
+- Added Save/Discard/Abort dialog to bookmarks manager when closing the dialog
+  while bookmarks are modified.

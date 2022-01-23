@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.staligtredan</groupId>
+	<artifactId>updater</artifactId>
+	<version>2.0.0</version>
+	<name>VideoMer</name>
+	<url>https://sourceforge.net/projects/videomer/</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.9</version>
+		</dependency>
+	</dependencies>
+
+
+
+	<build>
+		<sourceDirectory>./src/main/</sourceDirectory>
+		<finalName>updater-without-dep</finalName>
+		<resources>
+			<resource>
+				<directory>./src/main/resources/</directory>
+				<excludes>
+						<exclude>*</exclude>
+						<exclude>com/staligtredan/VideoMer/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/16x16/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/24x24/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/32x32/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/i32x32/*</exclude>
+						<exclude>com/staligtredan/VideoMer/imgs/*</exclude>
+					</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<includes>
+						<include>java/com/staligtredan/VideoMer/update/*.java</include>
+						<include>java/com/staligtredan/VideoMer/update/modeleXml/*.java</include>
+						<include>java/com/staligtredan/VideoMer/update/vue/*.java</include>
+					</includes>
+					<excludes>
+						<exclude>java/com/staligtredan/VideoMer/update/Switcher.java</exclude>
+						<exclude>java/com/staligtredan/VideoMer/update/UpdaterLocal.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>jar-with-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							
+							<descriptorRefs>
+								<descriptorRef>
+									jar-with-dependencies
+								</descriptorRef>
+							</descriptorRefs>
+							<finalName>updater</finalName>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>
+										com.staligtredan.VideoMer.update.Updater
+									</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

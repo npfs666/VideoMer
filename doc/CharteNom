@@ -1,0 +1,22 @@
+
+    Pour simplifier l'intertionalisation, il faut utiliser des préfixes pour
+    chaque composant :
+    
+    JButton : buttonXXX
+    JPanel  : panelXXX
+    JTextF  : textfXXX
+    JTextP  : textpXXX
+    JTextA  : textaXXX
+    JList   : listXXX
+    JTree   : treeXXX
+    JLabel  : lblXXX
+    JMenu   : menuXXXX
+    JCombo  : comboXXXX
+    JTable  : tableXXX
+    JEditor : editorXXX
+    JTabbed : tabXXX
+    JProgre : progressXXXX
+    JScroll : scrollXXX
+    JCheck  : checkXXX
+    JToolB  : toolXXX
+    JPopMen : popXXX

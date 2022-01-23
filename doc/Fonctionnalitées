@@ -1,0 +1,45 @@
+
+    #########
+    # Idées #
+    #########
+
+    - Surveilllance de dossier
+    - Gérer une biblio & tout ranger dans le même dossier
+    - Utiliser Imdb/wikipedia/allociné pour les films & TheTVDB pour les s�ries
+    - Intégrer le soft à l'OS via le clic droit sur les fichiers vidéos
+    X Intégrer une magic box pour l'entrée sortie des fichiers (alternative à l'intégration dans l'OS)
+    X Utlisier du sqlite pour en faire une appli portable OSement & materielement (HD externe)
+    X dans les options : - gestion des extenstion vidéos
+                         - personnalisation des regex
+                         - mode rangement auto
+    - Décider du mode d'affichage des elts, liste ou icones ou tableau
+    X Allow multi selection/editing
+    - mémoriser la playlist & le temps écoulé à la fermeture
+    - Garder un peu le système issu de Media manager (dvd, div'x, support...) pour faire un
+      système intelligent de prêt de film
+    X Possibilité de fonctionnement relatif + absolu
+    X Synchronisation facile ou autre entre plusieurs appli (DD externe, local)....
+    - Catégories : films, docu, séries, Spectacles(zik, humour, autre), animes
+    X Prendre en compte le rangement des sous-titres
+    X Faire en sorte de pouvoir rajouter des fichiers à la base de données, dès l'étape 
+      d'analyse des noms (pas de connection internet ou pas envie)
+    
+    
+    - Idées à reprendre d'un lecteur musical : une note sur 5, nombre de lectures du fichier,
+        la dernière lecture du fichier
+        
+    
+        
+    ############################
+    # Librairies de composants #
+    ############################
+    
+    - Boite d'erreurs   TaskDialog Project   https://flamingo.dev.java.net/
+    - Catégories options    L2FProd.com    http://l2fprod.com/common/
+    - Aide avec CSS     xhtmlrenderer Flying Saucer     https://xhtmlrenderer.dev.java.net/
+    - Carré de selection pour liste     rubber-band     https://rubber-band.dev.java.net/
+    - Recherche � la linux  Searchable   http://www.jidesoft.com
+    
+    à fouiner :
+    http://www.randelshofer.ch/quaqua/index.html
+    

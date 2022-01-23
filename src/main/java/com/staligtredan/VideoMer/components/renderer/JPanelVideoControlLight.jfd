@@ -1,0 +1,48 @@
+JFDML JFormDesigner: "5.2.5.0.333" Java: "1.8.0_111" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundlePackage": "lang"
+	"i18n.bundleName": "lang"
+	"i18n.keyPrefix": "JPanelVideoControlLights"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0:1.0, 0, 0, 0, 0:1.0"
+			"$rowSpecs": "0, 0, 0"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			add( new FormComponent( "org.jdesktop.swingx.JXButton" ) {
+				name: "buttonPrevious"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/staligtredan/VideoMer/imgs/32x32/media_step_back.png" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonPreviousActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+				"gridy": 1
+			} )
+			add( new FormComponent( "org.jdesktop.swingx.JXButton" ) {
+				name: "buttonPlayPause"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/staligtredan/VideoMer/imgs/32x32/media_play.png" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonPlayPauseActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"gridy": 1
+			} )
+			add( new FormComponent( "org.jdesktop.swingx.JXButton" ) {
+				name: "buttonNext"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/staligtredan/VideoMer/imgs/32x32/media_step_forward.png" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonNextActionPerformed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 1
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 670, 170 )
+		} )
+	}
+}

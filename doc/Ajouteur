@@ -1,0 +1,24 @@
+    
+    Conclusions : 
+    
+    Partir sur une idée de JXTreeTable à 3 colonnes (Nom, Type (série, film, ou autre), comboBox d'association)
+    du coup avec ce système il faut un très bon système de reconnaissance par regex, sinon la recherche
+    risque de ne pas fonctionner.
+    
+    Les paramètres utilisateurs : 
+        - Modifier le nom de fichier quand l'utilisateur le modifie
+        - Renommer le fichier selon un Template (ou le laisser tel quel)
+        - Ranger les fichiers dans la bibliothèque (ou les laisser ou ils sont)
+        
+  
+    A Faire : 
+    
+        X Faire une recherche pour prendre en compte les différentes façon d'écrire le nom des séries, film, etc
+          sur torrent, emule et google si possible (megaupload, ...)
+        X L'analyse des File ne doit prendre en compte que les fichiers vidéos, du coup 
+          il faut mettre en place une personnalisation dans l'écran paramètres de l'utilisateur
+        X Idem au niveau des regex, il faut pouvoir les rajouter au niveau des paramètres.
+        - Mettre en place un script par défaut dans les paramètres par type de fichier (film, série, ...)
+        X Stocker un tableau de File, chaqun de ces File est un dossier ajouté
+          Ensuite faire en sorte de recréer un arbre à partir des File
+          mettre en place le stockage de données des autres colonnes et ajouter les �couteurs

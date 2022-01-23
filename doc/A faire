@@ -1,0 +1,150 @@
+
+	
+	- Sauvegarde du layout
+	- Est-ce que le système anti doublons est fonctionnel ?
+	- PB ubuntu, lors du DL install tout passe dans le dossier /home/user/ ou un truc du genre
+		au lieu de se mettre dans le dossier ./
+	- Rajouter la possibilité de renommer un fichier dans l'éditeur unitaire
+		-> voire aussi de modifier le "code" pour les films & les séries.
+	- Rajouter la vitesse de copie lors du déplacement de masse et ou indiquer que tous va bien
+		-> prendre aussi en compte les erreurs de déplacement dus à des fichiers vérouillés (genre ouvert en torrent)
+			si possibles les indiquer avant la copie pour le fermer et continuer le process normalement par la suite
+		
+	X Rajouter dans le 'à propos' le site du truc video
+	
+	
+	
+	Trucs à faire :
+	
+        X Rajouter l'image dans entité vidéo
+        X Rajouter la barre de lecture + déplacement de la barre en direct avec la lecture
+        X Faire le choix entre créer un Object collection ou gérer autrement
+        X Faire le choix du positionnement de la fenêtre vidéo :
+            Un nouvel écran (sans controles), avec les controles sur l'écran principal
+            Un nouvel écran avec les controles
+            Un système d'onglet dans l'EcrPrincipal
+            A la place de xListMedia (gwenole)
+        X Clore la bibliothèque + modèle pour y insérer des données et commencer
+          à coder les intéractions.
+        X Finir le TransfertHandler du MediaList
+        X Faire les moteurs de recherche magigues
+        X L'ajout des données (a bien réfléchir)
+        X La lecture vidéo en fonction de la playlist
+        X L'écran d'options
+        X Corriger les bugs allociné (serie + pays) & les miniatures qui bug (Amen, goldzilla,...)
+        X Vérifier les fuites mémoire au niveau de la DB (trop de castle dans la saison 2) (ça venait le la playlist)
+        X Ranger dans l'ordre croissant les elts d'une série/list de série (vrac dans la BDD puis sort après)
+        X Mieux gérer le chargement des images -> tout au mêeme endroit si possible
+        X Pb avec la barre d'avancement dans l'étape 3 de jdialogAnalyse
+        X la mise à jour
+        X Prendre une décision pour la postition de l'écran Vidéo
+        X Suite au multithreadage de RechercheInfo il reste des choses à nettoyer dans le fichier Allocine.java
+        X Globaliser absolument tous les écrans d'erreurs avec stack trace
+        X Défragmenter la bdd (Defragment.defrag(DB4O_FILENAME);) qq part
+        - La bibliotheque jide-oss-3.1.1.1 contient des composants utiles au projet
+            X> des jdialog spéciales erreurs + printstacktrace -> JXDialogPane
+            -> un écran spécial pr les options
+        - Ajouter un clic droit à EcrAnalyse, lors de l'édition du nom des fichiers pour ajouter automatiquement un pattern supplémentaire
+        X Utile ou pas -> exporter juste le contenu d'une playlist??
+        X Copier & renommer les sous titres en mm temps que le films s'ils existent
+        - trouver un moyen de séparer l'exportation en plusieurs morceaux ?
+        X Ajouter les sous titres à la copie si possible
+        - Possibilité d'utiliser vlcj de nouveau car le fullscreen fonctionne sur windows
+        X Changer de systeme de fermeture/sauvegarde/maj de la DB, car c'est trop long (notamment sur les petites connections
+            ou vieux systèmes)
+    
+    EcrPrincipal :
+    
+        - On peut sauvegarder l'affichage du multiSplitPane, regarder le tuto (mot clef save)
+        X Revoir les actions du JPanelVideoControl (notamment le balayage des erreurs)
+        X Gérer les temps de lecture & le défilement du temps sur la barre
+        X Affichage des informations détaillées lors de la selection d'un média + Pseudo moteur de recherche comme
+            le média Manager
+        X Resize & drag de l'écran vidéo (non implémenté encore dans vlcj)
+        X L'écran d'éditeur de tags (mono & multi selection)
+        X La magicbox
+        X Finir de coder la fonction recherche (nom, acteur, réalisateur, pays, genre, synopsis)
+        X Permettre d'utiliser le lecteur par default du systeme
+        - Changer les infos données par le panneau détails (notamment le titre, nom ép série, etc...)
+        X Mettre à jour le téléchargeur de thumbnail pour optimiser la connection (et augmenter les perfs)
+        X Changer le moteur de recherche pour éviter les doublons et le multilingwer
+        X Ajouter la possibilité d'exporter une playliste sur un support externe (copie + avancée)
+        X Clic sur saison 1, xx ou tout pour ajouter tout le contenu directement dans la playlist
+        
+    EcrTagEditor :
+    
+        X Chaque champ est modifiable -> utilisation des champs m�moris�s comme pour le media manager
+        X intégrer un mono-moteur de recherche pour simplifier la vie
+        X Prévoir un popupMenu sur thumbnailList (edit, delete)
+        X Prendre en charge l'editing de masse
+        - Check pas de problèmes avec les relativePath toussa
+        X Finir la prise en charge des séries (code au démarrage, nom épisode, ...)
+        X Désactiver ou corriger la recherche auto en multi édition
+    
+    EcrOptions :
+    
+        X Faire les options & les intéractions (en mode full listener au mm endroit si possible)
+        X Finir
+        X Corriger les langues qui s'affichent pas dans leur langue originelle mais dans la defaultLocale
+        - Rajouter un onglets avancé avec des options supplémentaires (nb threads, moteur de parse, etc)
+            à faire quand le logiciel sera plus complet
+        X Avertir qu'il faut relancer l'app pr le L&f et langue (ou faire en interne)
+    
+    EcrAnalyse :
+    
+        - Rajouter le pattern série : S01E14 - Les simpsons - NomEp
+        X Mettre en place le système de Range fichier (un dossier qui contient toutes les données vidéos)
+        - vider le jdialogAnalyse pour préserver la mémoire (gros bordel avec le GC, apparement une histoire de listeners)
+        X Voir le multithread du coté série une fois corrigé le pb allociné, pour augmenter la cadence
+        X Mettre en plus de le barre %, une ligne xx/xx élts
+
+        
+    Système de MAJ :
+    
+        X Ecrire le(s) Threads de téléchargement / installation (pas multithread pr l'instant mais pr�voir au cas ou)
+        - Faire un écran pour ME simplifier la vie pour les MAJ (a voir pour beaucoup plus tard)
+        X Librairies inutiles à VLC en tant que lecteur video :
+             - "3dnow", "access_output", "gui", "media_library", "misc", "mux", "notify", "packetizer", "services_discorery",
+                "steam_out", "visualization"
+        - Multithreader de téléchargement des MAJ pour augmenter la vitesse
+        X Prendre en compte les fichiers langue (rechanger le systeme de MAJ)
+    
+    A faire avant d'exporter une version pré-finale utilisable sans devoir mettre à jour
+        
+        X le déplacement des fichiers lors de l'ajout
+        X définir les dossier "films" & "série" dans les options
+        X condamner les options inutiles
+        X changer le video control, et lire avec le lecteur par défaut de l'OS
+ 
+    Trucs à tester :
+    
+        X Listage d'icones
+        X SQlite // DB4O
+        X Lecteur Vidéo
+        X RubberBand d'une JListe (archive dans doc)
+        X Drag N Drog de partout
+        X Ajouter le pays d'origine du film pour effectuer des recherches faciles après par pays
+        
+    Bugs :
+    
+        X L'élément Date d'EntiteVideo n'est pas tranferable par DnD (apparament c possible mtn)
+        X Risque d'avoir pas mal de PB sur la fin entre Série, docu etc... et EntitéVideo
+        X Les langues sont contenues dans le jar et non pas à l'exterieur comme on pourrait le croire
+            changer le tout avant une vraie sortie du logiciel
+        X Bug de lecture dans VLCJ quand le path contient des accents
+        X Bug quand on décoche la playlist ou les infos ça s'actualise pas bien (mais avant ça fonctionnait quand tout 
+            était intégré dans des scroll)
+        X L'analyse au niveau des séries se fait mal mais seulement desfois (manque date & durée)
+        X Problème avec l'ajout de la série fururama (1 saison de décalage 6 en vrai mais 5 pris sur allociné)
+        X> changer le système de reconaissance des saisons et utiliser un regex sur saison X (entre des spans ...)
+         -> idems pour les monosaisons (refaire le modèle de fonctionnement, en analysant le clic sur le liens "épisodes")
+        X Rajouter le format .m4v à la liste des fichiers autorisés
+        X Problème lors de la recherche d'acteurs en mode série
+        X faire en sorte que ça zip pas fichier par fichier les posters
+			mais plutot en un seul bloc (trop lent sino)
+		X Finir la partie qui permet de pas ajouter à la bibliothèque les fichiers déjà présents
+			et rajouter ce détail au changelog
+		X Au démarrage threadiser la détéction de MAJ, sinon ça prends une plombe a lancer quand
+			la connection est saturée
+		X Pb lors de l'exportation, la vitesse ne se met pas à jour, ainsi que le temps restant
+		- Si on ajoute un fichier avec accents à EcrAnalyse il n'aparait pas (12-2021)

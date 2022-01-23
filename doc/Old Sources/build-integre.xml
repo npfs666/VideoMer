@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Video Manager with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+	<!-- <attribute name="Rsrc-Class-Path" value="./ lib/swingx-1.6.1.jar lib/db4o-7.12.145.14409.jar lib/log4j-1.2.16.jar lib/jna-3.2.5.jar lib/vlcj-1.1.1.jar"/> -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Users/Brendan/Desktop/VideoManager.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+            	<attribute name="Main-Class" value="controleur.VideoManager"/>
+            	<attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="./bin">
+                <exclude name="*.mf"/>
+                <exclude name=".settings/"/>
+                <exclude name="*.xml"/>
+                <exclude name="*.classpath"/>
+                <exclude name="*.project"/>
+                <exclude name="*.log"/>
+                <exclude name="test/"/>
+                <exclude name="vue/*.jfd"/>
+                <exclude name="posters/"/>
+        	</fileset>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/swingx-1.6.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/db4o-7.12.145.14409.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/log4j-1.2.16.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/jna-3.2.5.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/Filters.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/joda-time-1.6.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/platform.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="./lib/vlcj-1.1.1.1.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="./lib/l2fprod-common-buttonbar.jar"/>
+        </jar>
+    </target>
+</project>

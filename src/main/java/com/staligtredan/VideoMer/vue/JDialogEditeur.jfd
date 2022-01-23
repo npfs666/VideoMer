@@ -1,0 +1,319 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_144" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundlePackage": "com.staligtredan.VideoMer.lang"
+	"i18n.bundleName": "lang"
+	"i18n.keyPrefix": "JDialogEditeur"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"title": new FormMessage( null, "JDialogEditeur.this.title" )
+			"defaultCloseOperation": 2
+			"modalityType": enum java.awt.Dialog$ModalityType APPLICATION_MODAL
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 7, 7, 7, 7 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0:1.0, 0"
+					"$rowSpecs": "0, 0:1.0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "contentPanel"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "80, 300:1.0"
+						"$rowSpecs": "0, 0, 0, 0, 0, 0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "panelGlobalInfos"
+						"border": new javax.swing.border.TitledBorder( "i18nKey=JDialogEditeur.panelGlobalInfos.border" )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblTitle"
+							"text": new FormMessage( null, "JDialogEditeur.lblTitle.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textFieldTitle"
+							addEvent( new FormEvent( "java.awt.event.KeyListener", "keyReleased", "textFieldTitleKeyReleased", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCategory"
+							"text": new FormMessage( null, "JDialogEditeur.lblCategory.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "comboCategory"
+							auxiliary() {
+								"JavaCodeGenerator.typeParameters": "ResultComboBoxModel"
+							}
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboCategoryActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+							"gridx": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCode"
+							"text": new FormMessage( null, "JDialogEditeur.lblCode.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 2
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textFieldCode"
+							"toolTipText": new FormMessage( null, "JDialogEditeur.textFieldCode.toolTipText" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblSearchEngine"
+							"text": new FormMessage( null, "JDialogEditeur.lblSearchEngine.text" )
+							"enabled": false
+							"visible": false
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 3
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "comboBoxSearchEngine"
+							"enabled": false
+							"visible": false
+							auxiliary() {
+								"JavaCodeGenerator.typeParameters": "?"
+							}
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 3
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "buttonSearch"
+							"text": new FormMessage( null, "JDialogEditeur.buttonSearch.text" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonSearchActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 4
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblResults"
+							"text": new FormMessage( null, "JDialogEditeur.lblResults.text" )
+							"enabled": false
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 5
+						} )
+						add( new FormComponent( "com.staligtredan.VideoMer.util.FlexiComboBox" ) {
+							name: "comboBoxResults"
+							"enabled": false
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxResultsActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 5
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblPoster"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/staligtredan/VideoMer/imgs/empty_poster.jpg" )
+						"maximumSize": new java.awt.Dimension( 200, 300 )
+						"minimumSize": new java.awt.Dimension( 200, 300 )
+						"preferredSize": new java.awt.Dimension( 200, 300 )
+						"horizontalAlignment": 0
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "lblPosterMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "85, 0:1.0, 0"
+						"$rowSpecs": "0, 0, 0, 0, 0, 0:1.0, 0, 0, 0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "panelDetails"
+						"border": new javax.swing.border.TitledBorder( "i18nKey=JDialogEditeur.panelDetails.border" )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblEpisodeName"
+							"text": new FormMessage( null, "JDialogEditeur.lblEpisodeName.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textFieldEpisodeName"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblActors"
+							"text": new FormMessage( null, "JDialogEditeur.lblActors.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+						} )
+						add( new FormComponent( "com.staligtredan.VideoMer.components.JTextFieldAuto" ) {
+							name: "textFieldActors"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridwidth": 2
+							"gridy": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDirectors"
+							"text": new FormMessage( null, "JDialogEditeur.lblDirectors.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 2
+						} )
+						add( new FormComponent( "com.staligtredan.VideoMer.components.JTextFieldAuto" ) {
+							name: "textFieldDirectors"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 2
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblGenre"
+							"text": new FormMessage( null, "JDialogEditeur.lblGenre.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 3
+						} )
+						add( new FormComponent( "com.staligtredan.VideoMer.components.JTextFieldAuto" ) {
+							name: "textFieldGenre"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 3
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCountry"
+							"text": new FormMessage( null, "JDialogEditeur.lblCountry.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 4
+						} )
+						add( new FormComponent( "com.staligtredan.VideoMer.components.JTextFieldAuto" ) {
+							name: "textFieldCountry"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 4
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblPlot"
+							"text": new FormMessage( null, "JDialogEditeur.lblPlot.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 5
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPane1"
+							add( new FormComponent( "javax.swing.JTextArea" ) {
+								name: "textAreaPlot"
+								"rows": 4
+							} )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 5
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblPath"
+							"text": new FormMessage( null, "JDialogEditeur.lblPath.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 6
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textFieldPath"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 6
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "buttoBrowse"
+							"text": new FormMessage( null, "JDialogEditeur.buttoBrowse.text" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttoBrowseActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 2
+							"gridy": 6
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDuration"
+							"text": new FormMessage( null, "JDialogEditeur.lblDuration.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 7
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textFieldDuration"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 7
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDate"
+							"text": new FormMessage( null, "JDialogEditeur.lblDate.text" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 8
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textFieldDate"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+							"gridy": 8
+							"gridwidth": 2
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+						"gridwidth": 2
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0:1.0, 80, 80"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+				} ) {
+					name: "buttonBar"
+					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "okButton"
+						"text": "OK"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okButtonActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 0
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "cancelButton"
+						"text": "Annuler"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButtonActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 0
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 635, 665 )
+		} )
+		add( new FormComponent( "javax.swing.JLabel" ) {
+			name: "lblMultipleValues"
+			"text": new FormMessage( null, "JDialogEditeur.lblMultipleValues.text" )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 660, 75 )
+		} )
+		add( new FormComponent( "javax.swing.JLabel" ) {
+			name: "lblNoResults"
+			"text": new FormMessage( null, "JDialogEditeur.lblNoResults.text" )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 665, 95 )
+		} )
+	}
+}
